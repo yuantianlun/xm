@@ -21,15 +21,14 @@
     function fn(r="right") {
         if (r=="right") {
             next++;
-            if (next === dians.length) {
-                next = 0;
-            }
-        }
-        if (r=="left"){
+        }else if (r=="left"){
             next--;
-            if (next===-1){
-                next=dians.length-1;
-            }
+        }
+        if (next === dians.length) {
+            next = 0;
+        }
+        if (next===-1){
+            next=dians.length-1;
         }
         for(var i=0;i<dians.length;i++){
             dians[i].classList.remove("active1");
@@ -38,12 +37,12 @@
         dians[next].classList.add("active1");
         imgs[next].classList.add("active");
     };
-    let t=setInterval(fn,1000);
+    let t=setInterval(fn,3000);
     banner.onmouseover=function () {
         clearInterval(t);
     }
     banner.onmouseout=function(){
-        t=setInterval(fn,1000);
+        t=setInterval(fn,3000);
     }
     let flag=true;
     btnl.onclick=function () {
@@ -51,23 +50,22 @@
             flag=false;
             fn();
         }
-
+        console.log(flag)
     }
     btnr.onclick=function () {
         if (flag){
             flag=false;
-            fn(r="left")
+            fn("left");
         }
     }
-    imgs.forEach(function(el,index){
-        el.addEventListener("transitionend",function(){
+    imgs.forEach(function(ele,index){
+        ele.addEventListener("transitionend",function(){
             flag=true;
         })
     })
 
 
 }
-
 // addEventListener()   添加事件的方法 tegeansitionedf
 {
     let btn=document.querySelectorAll("button");

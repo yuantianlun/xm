@@ -354,7 +354,6 @@ li a:hover{
 .banner{
 	width: 1226px;
 	height: 460px;
-	background: red;
 	position: relative;
 }
 
@@ -363,6 +362,7 @@ li a:hover{
 	position: absolute;
 	z-index: 0;
 	opacity:0;
+    transition: all 1s;
 }
 /* 广告图片结束 */
 /* 侧边栏开始 */
@@ -1348,8 +1348,8 @@ button{
 }
 
 .act{
-	display: block;
-	left: 0;
+	opacity:1;
+	z-index: 1;
 }
 .nr-main-weizi1{
 	width: 100%;
